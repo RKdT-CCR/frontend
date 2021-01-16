@@ -1,0 +1,33 @@
+@host = https://hackathon-ccr.herokuapp.com
+# @name login
+POST {{host}}/api/login  HTTP/1.1
+content-type: application/json
+accept: application/json
+
+{
+    "email": "itallo@teste.com",
+    "password": "12345678",
+    "remember_me": true
+}
+######
+@token = {{login.response.body.success.token}}
+#############
+# Novo Usuário
+POST {{host}}/api/register  HTTP/1.1
+content-type: application/json
+accept: application/json
+
+{
+    "name":"Itallo",
+    "email":"itallo@teste.com",
+    "password": "12345678",
+    "c_password": "12345678"
+}
+#############
+
+#############
+# Teste de Login
+GET {{host}}/api/test-auth  HTTP/1.1
+content-type: application/json
+accept: application/json
+Authorization: Bearer {{token}}
