@@ -13,3 +13,17 @@ export function USER_LOGIN(body) {
     },
   };
 }
+
+export function USER_SINGUP(body) {
+  return {
+    url: `${API_BASE_URL}/api/register`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
