@@ -5,6 +5,10 @@ const types = {
     regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: 'Preencha um e-mail válido',
   },
+  cpf: {
+    regex: /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/,
+    message: 'Preencha um CPF válido',
+  },
 };
 
 const useForm = (type) => {

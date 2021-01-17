@@ -6,7 +6,7 @@
   border-radius: 0.4rem;
   background: var(--color-current);
   color: #764701;
-  min-width: 8rem;
+  min-width: 100%;
   padding: 0.8rem 1.2rem;
   box-sizing: border-box;
   transition: 0.1s;

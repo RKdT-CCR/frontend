@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../../Styles/Helper/Input.module.css';
 
-const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
+const Input = ({ label, type, max, name, value, onChange, error, onBlur }) => {
   return (
     <div className={styles.wrapper}>
       <label htmlFor={name} className={styles.label}>
@@ -10,6 +10,8 @@ const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
       </label>
       <input
         autoComplete="off"
+        max={max}
+        maxLength={max}
         id={name}
         name={name}
         className={styles.input}
