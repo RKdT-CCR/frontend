@@ -1,0 +1,41 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+.section::after {
+  content: '';
+  display: block;
+  background: url('../../../Assets/company_singup_bg.jpg');
+  background-size: cover;
+}
+
+.section .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5rem;
+}
+
+.form {
+  max-width: 50rem;
+  margin-bottom: 2rem;
+}
+
+.japossui {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 50rem) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+  .section::after {
+    display: none;
+  }
+  .section .content {
+    padding: 0 1rem;
+  }
+}
