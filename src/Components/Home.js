@@ -7,7 +7,7 @@ const Home = () => {
       <div className={styles.content}>
         <h2 className="title">Primeira Chance</h2>
         <h4 className={styles.subtitle}>
-          Plataforma que auxilia o usuário a se desenvolver e encontrar emprego
+          Iniciativa que une empresas a grandes talentos.
         </h4>
         <div className={styles.cards}>
           <div className={styles.person}>Person</div>

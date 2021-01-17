@@ -30,3 +30,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
+
+@media (max-width: 40rem) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .home::after {
+    display: none;
+  }
+}
