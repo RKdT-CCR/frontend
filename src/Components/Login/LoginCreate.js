@@ -5,12 +5,13 @@ import styles from '../../Styles/Login/LoginForm.module.css';
 
 import Input from '../Helper/Input';
 import Button from '../Helper/Button';
-import Error from '../Helper/Error';
 import useForm from '../../Hooks/useForm';
 
 import { UserSingUp } from '../../Services/UserServices';
 
 const LoginCreate = () => {
+  const [loading, setLoading] = React.useState(false);
+
   const name = useForm();
   const email = useForm('email');
   const password = useForm();
@@ -24,12 +25,14 @@ const LoginCreate = () => {
       password.validate() &&
       password.value === repassword.value
     ) {
+      setLoading(true);
       const cadastro = await UserSingUp(
         name.value,
         email.value,
         password.value,
         password.value,
       );
+      setLoading(false);
       if (cadastro.success) {
         console.log('Cadastrado com sucesso!');
       }
@@ -49,7 +52,11 @@ const LoginCreate = () => {
           name="repassword"
           {...repassword}
         />
-        <Button>Cadastrar</Button>
+        {loading ? (
+          <Button disabled>Cadastrando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
       </form>
       <Link to="/login">Entrar</Link>
     </section>

@@ -1,0 +1,32 @@
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+.home::after {
+  content: '';
+  display: block;
+  background: url('../Assets/home_bg.svg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.home .content {
+  padding: 5rem;
+}
+
+.home .content .subtitle {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  line-height: 3rem;
+  margin: 4rem 0;
+}
+
+.home .content .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
