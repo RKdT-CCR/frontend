@@ -7,6 +7,7 @@ import styles from '../../Styles/Login/Login.module.css';
 
 import LoginForm from './LoginForm';
 import LoginCreate from './LoginCreate';
+import CompanyLogin from './Company/CompanyLogin';
 
 //#endregion
 
@@ -17,6 +18,7 @@ const Login = () => {
         <Routes>
           <Route path="/" element={<LoginForm />} />
           <Route path="criar" element={<LoginCreate />} />
+          <Route path="empresa/*" element={<CompanyLogin />} />
         </Routes>
       </div>
     </section>
