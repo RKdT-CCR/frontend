@@ -9,11 +9,13 @@ const Account = () => {
   const { auth, user } = React.useContext(Context);
 
   React.useEffect(() => {
-    if (!auth) navigate('/');
+    const auth = window.localStorage.getItem('auth');
+    if (!auth || !user) navigate('/');
   }, [auth]);
 
   function handleClick() {
     window.localStorage.removeItem('token');
+    window.localStorage.removeItem('auth');
     navigate('/');
   }
 

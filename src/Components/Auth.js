@@ -11,7 +11,6 @@ const Auth = () => {
   async function login() {
     await context.setData(null);
     const response = await context.GetUser();
-    console.log(response);
     if (response) {
       await context.setData(response.person);
       await context.DefTrilhas(response.trails);

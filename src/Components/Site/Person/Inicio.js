@@ -9,11 +9,11 @@ import Trilha from './Trilha/Trilha';
 
 const Inicio = () => {
   const navigate = useNavigate();
-  const { user } = React.useContext(Context);
+  const { user, trilhas } = React.useContext(Context);
 
   React.useEffect(() => {
     const auth = window.localStorage.getItem('auth');
-    if (!auth) navigate('/');
+    if (!auth || !user) navigate('/');
   }, []);
 
   if (user) {
@@ -22,7 +22,8 @@ const Inicio = () => {
         <Header />
         <div style={{ marginTop: '4rem', padding: '3rem' }}>
           <div className={styles.content}>
-            <Trilha />
+            {trilhas &&
+              trilhas.map((trilha) => <Trilha key={trilha.id} data={trilha} />)}
           </div>
         </div>
       </section>
