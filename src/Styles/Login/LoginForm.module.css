@@ -23,3 +23,15 @@
   max-width: 50rem;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 50rem) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+  .section::after {
+    display: none;
+  }
+  .section .content {
+    padding: 0 1rem;
+  }
+}
