@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../../../../Styles/Person/Trilha.module.css';
 
-const Trilha = ({ data }) => {
+const Trilha = ({ data, completos }) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.card}>
@@ -13,10 +13,11 @@ const Trilha = ({ data }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.progressContainer}>
-            <div className={styles.progress}></div>
-            <span className={styles.progressText}>6/9 Desafios</span>
+            <span className={styles.progressText}>
+              {completos}/{data.course_total} Desafios
+            </span>
           </div>
-          <h6>Capitulo 4</h6>
+          <h6>Capitulo {completos}</h6>
           <h2>Assertividade</h2>
           <button className={styles.btn}>Continuar</button>
         </div>

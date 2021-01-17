@@ -9,7 +9,9 @@ import Trilha from './Trilha/Trilha';
 
 const Inicio = () => {
   const navigate = useNavigate();
-  const { user, trilhas } = React.useContext(Context);
+  const { user, trilhas, coursesCompletes, coursesStatus } = React.useContext(
+    Context,
+  );
 
   React.useEffect(() => {
     const auth = window.localStorage.getItem('auth');
@@ -24,7 +26,23 @@ const Inicio = () => {
           <h1 className="title">Trilhas</h1>
           <div className={styles.content}>
             {trilhas &&
-              trilhas.map((trilha) => <Trilha key={trilha.id} data={trilha} />)}
+              trilhas.map((trilha) => {
+                const status = coursesStatus.filter(
+                  (i) => i.trail_id == trilha.trail_id,
+                );
+                const completos = status.map((stt) => {
+                  const t = coursesCompletes.filter(
+                    (c) => c.course_id == stt.course_id,
+                  );
+                  return t;
+                });
+
+                return (
+                  <div key={trilha.trail_id}>
+                    <Trilha completos={completos.length} data={trilha} />
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>

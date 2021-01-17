@@ -7,6 +7,8 @@ export const Context = React.createContext();
 export const UserStorage = ({ children }) => {
   const [user, setUser] = React.useState(null);
   const [trilhas, setTrilhas] = React.useState(null);
+  const [coursesCompletes, setCoursesCompletes] = React.useState(null);
+  const [coursesStatus, setCoursesStatus] = React.useState(null);
 
   async function GetUser() {
     try {
@@ -30,8 +32,28 @@ export const UserStorage = ({ children }) => {
     setTrilhas(data);
   }
 
+  function DefCompletes(data) {
+    setCoursesCompletes(data);
+  }
+
+  function DefStatus(data) {
+    setCoursesStatus(data);
+  }
+
   return (
-    <Context.Provider value={{ user, trilhas, GetUser, setData, DefTrilhas }}>
+    <Context.Provider
+      value={{
+        user,
+        trilhas,
+        coursesCompletes,
+        coursesStatus,
+        GetUser,
+        setData,
+        DefTrilhas,
+        DefCompletes,
+        DefStatus,
+      }}
+    >
       {children}
     </Context.Provider>
   );

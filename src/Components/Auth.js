@@ -14,10 +14,15 @@ const Auth = () => {
     if (response) {
       await context.setData(response.person);
       await context.DefTrilhas(response.trails);
+      await context.DefCompletes(response.courses_completed);
+      await context.DefStatus(response.courses_status);
       window.localStorage.setItem('auth', 'true');
       navigate('/inicio');
     } else {
-      context.setData(null);
+      await context.setData(null);
+      await context.DefTrilhas(null);
+      await context.DefCompletes(null);
+      await context.DefStatus(null);
       window.localStorage.removeItem('token');
       window.localStorage.removeItem('auth');
       navigate('/');
