@@ -18,7 +18,7 @@ const Trilha = ({ data, completos }) => {
             </span>
           </div>
           <h6>Capitulo {completos}</h6>
-          <h2>Assertividade</h2>
+          <h2>{data.description}</h2>
           <button className={styles.btn}>Continuar</button>
         </div>
       </div>
