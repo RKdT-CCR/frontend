@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Context } from '../../../Services/UserServices';
 import Button from '../../Helper/Button';
@@ -24,7 +24,18 @@ const Account = () => {
       <section>
         <Header />
         <div style={{ marginTop: '4rem', padding: '3rem' }}>
-          Sua conta
+          <h1 className="title">Sua conta</h1>
+          <div style={{ margin: '4rem 0' }}>
+            <h3 style={{ margin: '1rem 0', color: 'rgba(0, 0, 0, 0.5)' }}>
+              Nome: {user.name}
+            </h3>
+            <h3 style={{ margin: '1rem 0', color: 'rgba(0, 0, 0, 0.5)' }}>
+              E-mail: {user.email}
+            </h3>
+            <h3 style={{ margin: '1rem 0', color: 'rgba(0, 0, 0, 0.5)' }}>
+              Número: {user.number}
+            </h3>
+          </div>
           <button onClick={handleClick}>Sair</button>
         </div>
       </section>

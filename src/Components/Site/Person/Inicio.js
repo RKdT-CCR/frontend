@@ -21,6 +21,7 @@ const Inicio = () => {
       <section>
         <Header />
         <div style={{ marginTop: '4rem', padding: '3rem' }}>
+          <h1 className="title">Trilhas</h1>
           <div className={styles.content}>
             {trilhas &&
               trilhas.map((trilha) => <Trilha key={trilha.id} data={trilha} />)}
