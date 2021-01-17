@@ -24,14 +24,15 @@ const LoginForm = () => {
   }
 
   return (
-    <section>
-      <h1 className="title">Entrar</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="E-mail" type="email" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
-      </form>
-      <Link to="/login/criar">Cadastro</Link>
+    <section className={styles.section}>
+      <div className={styles.content}>
+        <h1 className="title">Entrar</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <Input label="E-mail" type="email" name="email" {...email} />
+          <Input label="Senha" type="password" name="password" {...password} />
+          <Button>Entrar</Button>
+        </form>
+      </div>
     </section>
   );
 };

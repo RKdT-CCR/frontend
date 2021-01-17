@@ -1,3 +1,25 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+.section::after {
+  content: '';
+  display: block;
+  background: url('../../Assets/login_bg.jpg');
+  background-size: cover;
+}
+
+.section .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5rem;
+}
+
 .form {
+  max-width: 50rem;
   margin-bottom: 2rem;
 }

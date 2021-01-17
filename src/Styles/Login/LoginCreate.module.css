@@ -8,7 +8,7 @@
 .section::after {
   content: '';
   display: block;
-  background: url('../../Assets//person_login_bg.jpg');
+  background: url('../../Assets/person_singup_bg.jpg');
   background-size: cover;
 }
 
