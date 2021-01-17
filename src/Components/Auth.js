@@ -11,14 +11,16 @@ const Auth = () => {
   async function login() {
     await context.setData(null);
     const response = await context.GetUser();
-    if (response.success) {
-      await context.setData(response.success[0]);
-      context.isAuth(true);
+    console.log(response);
+    if (response) {
+      await context.setData(response.person);
+      await context.DefTrilhas(response.trails);
+      window.localStorage.setItem('auth', 'true');
       navigate('/inicio');
     } else {
       context.setData(null);
-      context.isAuth(false);
       window.localStorage.removeItem('token');
+      window.localStorage.removeItem('auth');
       navigate('/');
     }
   }

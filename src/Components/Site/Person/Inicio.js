@@ -1,23 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import styles from '../../../Styles/Person/Inicio.module.css';
+
 import { Context } from '../../../Services/UserServices';
 import Header from './Header';
+import Trilha from './Trilha/Trilha';
 
 const Inicio = () => {
   const navigate = useNavigate();
-  const { auth, user } = React.useContext(Context);
+  const { user } = React.useContext(Context);
 
   React.useEffect(() => {
+    const auth = window.localStorage.getItem('auth');
     if (!auth) navigate('/');
-  }, [auth]);
+  }, []);
 
   if (user) {
     return (
       <section>
         <Header />
         <div style={{ marginTop: '4rem', padding: '3rem' }}>
-          Autenticado: {auth}
+          <div className={styles.content}>
+            <Trilha />
+          </div>
         </div>
       </section>
     );

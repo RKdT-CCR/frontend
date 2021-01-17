@@ -6,7 +6,7 @@ export const Context = React.createContext();
 
 export const UserStorage = ({ children }) => {
   const [user, setUser] = React.useState(null);
-  const [auth, setAuth] = React.useState(false);
+  const [trilhas, setTrilhas] = React.useState(null);
 
   async function GetUser() {
     try {
@@ -25,12 +25,12 @@ export const UserStorage = ({ children }) => {
     setUser(data);
   }
 
-  function isAuth(value) {
-    setAuth(value);
+  function DefTrilhas(data) {
+    setTrilhas(data);
   }
 
   return (
-    <Context.Provider value={{ user, auth, GetUser, setData, isAuth }}>
+    <Context.Provider value={{ user, trilhas, GetUser, setData, DefTrilhas }}>
       {children}
     </Context.Provider>
   );
