@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import styles from '../../Styles/Login/Login.module.css';
 
@@ -12,6 +12,15 @@ import CompanyLogin from './Company/CompanyLogin';
 //#endregion
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const token = window.localStorage.getItem('token');
+    if (token) {
+      navigate('/auth');
+    }
+  }, []);
+
   return (
     <section className={styles.login}>
       <div className={styles.forms}>

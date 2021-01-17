@@ -14,8 +14,8 @@ const Home = () => {
           <div className={styles.person}>
             <h3>Para Jovens</h3>
             <p className={styles.texto}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-              reprehenderit iure optio asperiores ipsam molestiae.
+              Aprenda novos conteúdos, adquira habilidades requisitadas pelo
+              mercado e dê o primeiro passo na sua vida profissional
             </p>
             <Link
               to="/login/criar"
@@ -27,8 +27,8 @@ const Home = () => {
           <div className={styles.company}>
             <h3>Para Empresas</h3>
             <p className={styles.texto}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-              reprehenderit iure optio asperiores ipsam molestiae.
+              Apoie e incentive jovens em situação de vulnerabilidade social a
+              terem a primeira chance no mercado de trabalho
             </p>
             <Link
               to="/login/empresa/criar"

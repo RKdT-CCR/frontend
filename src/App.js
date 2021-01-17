@@ -5,23 +5,27 @@ import './App.css';
 
 //#region Components
 
-import Header from './Components/Header';
 import Home from './Components/Home';
 import Login from './Components/Login/Login';
-import Footer from './Components/Footer';
+import Auth from './Components/Auth';
+
+import { UserStorage } from './Services/UserServices';
+import Inicio from './Components/Site/Person/Inicio';
 
 //#endregion
 
 function App() {
   return (
-    <div>
+    <UserStorage>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/login/*" element={<Login />} />
+          <Route path="/inicio" element={<Inicio />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </UserStorage>
   );
 }
 
