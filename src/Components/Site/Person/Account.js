@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Context } from '../../../Services/UserServices';
 import Header from './Header';
-
-const Inicio = () => {
+const Account = () => {
   const navigate = useNavigate();
   const { auth, user } = React.useContext(Context);
 
@@ -16,12 +15,10 @@ const Inicio = () => {
     return (
       <section>
         <Header />
-        <div style={{ marginTop: '4rem', padding: '3rem' }}>
-          Autenticado: {auth}
-        </div>
+        <div style={{ marginTop: '4rem', padding: '3rem' }}>Sua conta</div>
       </section>
     );
   } else return <div></div>;
 };
 
-export default Inicio;
+export default Account;

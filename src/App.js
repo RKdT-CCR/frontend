@@ -11,6 +11,7 @@ import Auth from './Components/Auth';
 
 import { UserStorage } from './Services/UserServices';
 import Inicio from './Components/Site/Person/Inicio';
+import Account from './Components/Site/Person/Account';
 
 //#endregion
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/login/*" element={<Login />} />
           <Route path="/inicio" element={<Inicio />} />
+          <Route path="/conta" element={<Account />} />
         </Routes>
       </BrowserRouter>
     </UserStorage>
