@@ -1,18 +1,25 @@
 import React from 'react';
-import { nativeTouchData } from 'react-dom/test-utils';
 import { useNavigate } from 'react-router-dom';
 
 import { Context } from '../../../Services/UserServices';
+import Header from './Header';
 
 const Inicio = () => {
   const navigate = useNavigate();
-  const { auth } = React.useContext(Context);
+  const { auth, user } = React.useContext(Context);
 
   React.useEffect(() => {
     if (!auth) navigate('/');
   }, [auth]);
 
-  return <div>Inicio Usuário</div>;
+  if (user) {
+    return (
+      <section>
+        <Header />
+        <div style={{ marginTop: '4rem' }}>Autenticado: {auth}</div>
+      </section>
+    );
+  } else return <div></div>;
 };
 
 export default Inicio;
